@@ -1,4 +1,4 @@
-package com.statisticsservice.entities;
+package com.statisticsservice.statisticsservice.entities;
 
 
 
