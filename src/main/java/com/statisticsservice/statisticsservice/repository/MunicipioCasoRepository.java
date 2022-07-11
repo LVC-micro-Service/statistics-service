@@ -1,6 +1,7 @@
 package com.statisticsservice.statisticsservice.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,10 +14,7 @@ import com.statisticsservice.statisticsservice.entities.MunicipioCasoId;
 @Repository
 public interface MunicipioCasoRepository  extends JpaRepository<MunicipioCaso, MunicipioCasoId>{
     
-    @Query(
-  value = "SELECT * FROM municipio_caso ORDER BY count(codigo_ibge) DESC", 
-  countQuery = "SELECT count(codigo_ibge) FROM municipio_caso GROUP BY codigo_ibge", 
-  nativeQuery = true)
-    List<CasosMunicipioDTO> casosPorMunicipio();
+    @Query(value = "SELECT new com.statisticsservice.statisticsservice.dto.CasosMunicipioDTO (obj.codigo_ibge, SUM(obj.amount)) FROM MunicipioCaso As obj GROUP BY obj.codigo_ibge") 
+    Optional<List<CasosMunicipioDTO>> casosPorMunicipio();
 
 }

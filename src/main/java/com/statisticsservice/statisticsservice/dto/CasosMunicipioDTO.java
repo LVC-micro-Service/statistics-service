@@ -6,40 +6,29 @@ public class CasosMunicipioDTO implements Serializable{
 
     private static final long serialVersionUID = 1L;
     
-    private int codigoIbge;
-    private Long casoId;
-    private Long pacienteId;
+    private int count;
+    private int codigo_ibge;
 
-    public CasosMunicipioDTO(int codigoIbge) {
-        this.codigoIbge = codigoIbge;
+    public CasosMunicipioDTO(int codigoIbge, int count) {
+        this.codigo_ibge = codigoIbge;
+        this.count = count;
     }
 
     public int getCodigoIbge() {
-        return codigoIbge;
+        return codigo_ibge;
     }
 
-    public void setCodigoIbge(int codigoIbge, Long casoId, Long pacienteId) {
-        this.codigoIbge = codigoIbge;
-        this.casoId = casoId;
-        this.pacienteId = pacienteId;
+    public int getCount() {
+        return count;
     }
 
-    public Long getCasoId() {
-        return casoId;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public void setCasoId(Long casoId) {
-        this.casoId = casoId;
+    public void setCodigoIbge(int codigoIbge) {
+        this.codigo_ibge = codigoIbge;
     }
 
-    public Long getPacienteId() {
-        return pacienteId;
-    }
-
-    public void setPacienteId(Long pacienteId) {
-        this.pacienteId = pacienteId;
-    }
-
-    
     
     }
