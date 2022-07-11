@@ -1,25 +1,25 @@
-package com.statisticsservice.statisticsservice.Producer;
+package com.statisticsservice.statisticsservice.consumer;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import com.statisticsservice.statisticsservice.entities.CasoLVC;
-import com.statisticsservice.statisticsservice.repository.CasoLVCRepository;
+import com.statisticsservice.statisticsservice.entities.CasoLV;
+import com.statisticsservice.statisticsservice.repository.CasoLVRepository;
 
 @Component
 class CasoConsumer {
 
-    private CasoLVCRepository repository;
+    private CasoLVRepository repository;
 
     @Autowired
-    public CasoConsumer(CasoLVCRepository repository) {
+    public CasoConsumer(CasoLVRepository repository) {
         this.repository = repository;
     }
 
     @RabbitListener(queues = {"$crud.rabbit.mq.queueCaso"})
-    public void consumer(@Payload CasoLVC caso){
+    public void consumer(@Payload CasoLV caso){
         repository.save(caso);
     }
 }

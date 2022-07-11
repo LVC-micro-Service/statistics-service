@@ -17,7 +17,7 @@ public class MunicipioCaso {
  
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("casoId")
-    private CasoLVC caso;
+    private CasoLV caso;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("pacienteId")
@@ -26,7 +26,7 @@ public class MunicipioCaso {
     @Column(name = "codigoIbge")
     private String codigoIbge;
  
-    public MunicipioCaso(CasoLVC caso, Paciente paciente, String codigoIbge) {
+    public MunicipioCaso(CasoLV caso, Paciente paciente, String codigoIbge) {
         this.caso = caso;
         this.paciente = paciente;
         this.codigoIbge = codigoIbge;

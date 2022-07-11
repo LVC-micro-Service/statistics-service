@@ -19,7 +19,7 @@ import java.util.List;
 @Entity
 // @Data
 @Table(name = "casoLVC")
-public class CasoLVC {
+public class CasoLV {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,8 +46,14 @@ public class CasoLVC {
         this.dataRegistro = dataRegistro;
     }
 
-    public CasoLVC(Date dataRegistro){
+    public CasoLV(Date dataRegistro){
         this.dataRegistro = dataRegistro;
     }
+
+    public List<CasoSintoma> getSintomas() {
+        return sintomas;
+    }
+
+    
 
 }

@@ -19,7 +19,7 @@ public class CasoSintoma {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("casoId")
-    private CasoLVC caso;
+    private CasoLV caso;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("sintomaId")
@@ -28,12 +28,12 @@ public class CasoSintoma {
     @Column(name = "outro")
     private String outro;
 
-    public CasoSintoma(CasoLVC caso, Sintoma sintoma) {
+    public CasoSintoma(CasoLV caso, Sintoma sintoma) {
         this.caso = caso;
         this.sintoma = sintoma;
         this.id = new CasoSintomaId(caso.getId(), sintoma.getId());
     }
-    public CasoSintoma(CasoLVC caso, Sintoma sintoma, String outro) {
+    public CasoSintoma(CasoLV caso, Sintoma sintoma, String outro) {
         this.caso = caso;
         this.sintoma = sintoma;
         this.outro = outro;
@@ -48,7 +48,7 @@ public class CasoSintoma {
         return id;
     }
 
-    public CasoLVC getCaso() {
+    public CasoLV getCaso() {
         return caso;
     }
 
@@ -64,7 +64,7 @@ public class CasoSintoma {
         this.id = id;
     }
 
-    public void setCaso(CasoLVC caso) {
+    public void setCaso(CasoLV caso) {
         this.caso = caso;
     }
 
