@@ -18,7 +18,7 @@ class CasoConsumer {
         this.repository = repository;
     }
 
-    @RabbitListener(queues = {"$crud.rabbit.mq.queueCaso"})
+    @RabbitListener(queues = {"$crud.rabbitmq.queueCaso"})
     public void consumer(@Payload CasoLV caso){
         repository.save(caso);
     }

@@ -6,10 +6,10 @@ server:
   rabbitmq:
     host: localhost
     port: 5672
-    username: guest
-    password: guest
+    username: username
+    password: password
 
 crud:
   rabbitmq:
-    exchange: crud.rabbitmq.exchange
+    exchange: crud.exchange
     queueCaso: crud.consumo.caso
