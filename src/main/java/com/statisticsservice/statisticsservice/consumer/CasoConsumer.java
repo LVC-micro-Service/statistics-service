@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import com.statisticsservice.statisticsservice.dto.CasoLVDTO;
 import com.statisticsservice.statisticsservice.entities.CasoLV;
 import com.statisticsservice.statisticsservice.repository.CasoLVRepository;
 
@@ -18,8 +19,8 @@ class CasoConsumer {
         this.repository = repository;
     }
 
-    @RabbitListener(queues = {"$crud.rabbitmq.queueCaso"})
-    public void consumer(@Payload CasoLV caso){
+    @RabbitListener(queues = "crud.statistics.caso")
+    public void consumer(@Payload CasoLVDTO caso){
         repository.save(caso);
     }
 }

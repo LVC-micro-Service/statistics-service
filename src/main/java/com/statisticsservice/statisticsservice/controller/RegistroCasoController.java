@@ -49,8 +49,8 @@ public class RegistroCasoController {
     }
 
     public ResponseEntity<String> capturarCaso(CasoLVDTO dto) {
-        CasoLV caso = new CasoLV(dto.getCaso().getDataRegistro());
-
+        CasoLV caso = new CasoLV(dto.getCaso().getId(), dto.getCaso().getDataRegistro());
+        
         try {
             service.inserir(caso);
 

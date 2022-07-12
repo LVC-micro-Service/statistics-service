@@ -46,8 +46,16 @@ public class CasoLV {
         this.dataRegistro = dataRegistro;
     }
 
-    public CasoLV(Date dataRegistro){
+    // public CasoLV(Date dataRegistro){
+    //     this.dataRegistro = dataRegistro;
+    // }
+
+    public CasoLV(Long id, Date dataRegistro) {
+        this.id = id;
         this.dataRegistro = dataRegistro;
+    }
+
+    public CasoLV() {
     }
 
     public List<CasoSintoma> getSintomas() {
