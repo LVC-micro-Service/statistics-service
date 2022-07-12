@@ -18,7 +18,7 @@ import java.util.List;
 
 @Entity
 // @Data
-@Table(name = "casoLVC")
+@Table(name = "casoLV")
 public class CasoLV {
 
     @Id
@@ -27,9 +27,6 @@ public class CasoLV {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
     private Date dataRegistro;
-
-    @OneToMany(mappedBy = "sintoma", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CasoSintoma> sintomas = new ArrayList<CasoSintoma>();
 
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MunicipioCaso> pacientes = new ArrayList<MunicipioCaso>();
@@ -42,13 +39,14 @@ public class CasoLV {
         return dataRegistro;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setDataRegistro(Date dataRegistro) {
         this.dataRegistro = dataRegistro;
     }
 
-    // public CasoLV(Date dataRegistro){
-    //     this.dataRegistro = dataRegistro;
-    // }
 
     public CasoLV(Long id, Date dataRegistro) {
         this.id = id;
@@ -58,9 +56,6 @@ public class CasoLV {
     public CasoLV() {
     }
 
-    public List<CasoSintoma> getSintomas() {
-        return sintomas;
-    }
 
     
 

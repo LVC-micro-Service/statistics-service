@@ -10,7 +10,4 @@ import com.statisticsservice.statisticsservice.entities.MunicipioCasoId;
 @Repository
 public interface MunicipioCasoRepository  extends JpaRepository<MunicipioCaso, MunicipioCasoId>{
     
-    // @Query(value = "SELECT new com.statisticsservice.statisticsservice.dto.CasosMunicipioDTO (obj.codigo_ibge, SUM(obj.amount)) FROM MunicipioCaso As obj GROUP BY obj.codigo_ibge") 
-    // Optional<List<CasosMunicipioDTO>> casosPorMunicipio();
-
 }

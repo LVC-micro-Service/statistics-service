@@ -61,6 +61,10 @@ public class Paciente {
         this.sexo = sexo;
     }
 
+    public Paciente(){
+        
+    }
+
     public Long getId() {
         return id;
     }

@@ -11,13 +11,14 @@ import javax.persistence.Table;
 @Entity(name = "MunicipioCaso")
 @Table(name = "municipio_caso")
 public class MunicipioCaso {
-    
+
     @EmbeddedId
     private MunicipioCasoId id;
- 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("casoId")
     private CasoLV caso;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("pacienteId")
@@ -25,54 +26,41 @@ public class MunicipioCaso {
 
     @Column(name = "codigoIbge")
     private String codigoIbge;
- 
-    public MunicipioCaso(CasoLV caso, Paciente paciente, String codigoIbge) {
+
+
+    public MunicipioCaso(CasoLV caso, Paciente paciente) {
         this.caso = caso;
         this.paciente = paciente;
-        this.codigoIbge = codigoIbge;
         this.id = new MunicipioCasoId(caso.getId(), paciente.getId());
+    }
+
+
+    public String getCodigoIbge() {
+        return codigoIbge;
+    }
+
+    public void setCodigoIbge(String codigoIbge) {
+        this.codigoIbge = codigoIbge;
     }
 
     public MunicipioCaso() {
 
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((caso == null) ? 0 : caso.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((paciente == null) ? 0 : paciente.hashCode());
-        return result;
+    public CasoLV getCaso() {
+        return caso;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        MunicipioCaso other = (MunicipioCaso) obj;
-        if (caso == null) {
-            if (other.caso != null)
-                return false;
-        } else if (!caso.equals(other.caso))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (paciente == null) {
-            if (other.paciente != null)
-                return false;
-        } else if (!paciente.equals(other.paciente))
-            return false;
-        return true;
+    public void setCaso(CasoLV caso) {
+        this.caso = caso;
     }
-    
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
     
 }
