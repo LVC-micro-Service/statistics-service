@@ -9,6 +9,10 @@ server:
     username: guest
     password: guest
 
+spring:
+  application:
+    name: STATISTICS-SERVICE
+
 crud:
   rabbitmq:
     exchange: crud.rabbitmq.exchange
