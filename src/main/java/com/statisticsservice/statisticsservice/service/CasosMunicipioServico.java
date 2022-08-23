@@ -17,9 +17,4 @@ public class CasosMunicipioServico {
     public void inserir(MunicipioCaso municipioCaso){
         repository.save(municipioCaso);
     }
-
-    // @Transactional(readOnly = true)
-    // public Optional<List<CasosMunicipioDTO>> listarCasosPorMunicipio(Pageable pageable){
-    //     return repository.casosPorMunicipio();
-    // }
 }

@@ -15,22 +15,18 @@ public class Sintoma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String nome;
 
-    public void setId(Long id) {
-        this.id = id;
+    public void definirNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Long getId() {
+    public Long retornarId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String retornarNome() {
+        return nome;
     }
 
 }

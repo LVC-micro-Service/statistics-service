@@ -31,11 +31,11 @@ public class MunicipioCaso {
     public MunicipioCaso(CasoLV caso, Paciente paciente) {
         this.caso = caso;
         this.paciente = paciente;
-        this.id = new MunicipioCasoId(caso.getId(), paciente.getId());
+        this.id = new MunicipioCasoId(caso.retornarId(), paciente.retornarId());
     }
 
 
-    public String getCodigoIbge() {
+    public String retornarCodigoIbge() {
         return codigoIbge;
     }
 
@@ -47,19 +47,19 @@ public class MunicipioCaso {
 
     }
 
-    public CasoLV getCaso() {
+    public CasoLV retornarCaso() {
         return caso;
     }
 
-    public void setCaso(CasoLV caso) {
+    public void definirCaso(CasoLV caso) {
         this.caso = caso;
     }
 
-    public Paciente getPaciente() {
+    public Paciente retornarPaciente() {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
+    public void definirPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
     

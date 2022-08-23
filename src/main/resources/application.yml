@@ -1,7 +1,7 @@
 server:
   port: 8084
   servlet:
-    context-path: /statisticsService
+    context-path: /lvch-statisticsService
 
   rabbitmq:
     host: localhost
@@ -11,7 +11,7 @@ server:
 
 spring:
   application:
-    name: STATISTICS-SERVICE
+    name: StatisticsService
 
 crud:
   rabbitmq:

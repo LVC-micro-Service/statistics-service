@@ -24,7 +24,6 @@ class CasoConsumer {
     @RabbitListener(queues = "crud.statistics.caso")
     public void consumer(@Payload ConsumerDTO caso) {
         try {
-
             CasoLV casoNew = salvarCaso(caso);
             Paciente pacienteNew = salvarPaciente(caso);
             // salvarSintomas(caso) &&

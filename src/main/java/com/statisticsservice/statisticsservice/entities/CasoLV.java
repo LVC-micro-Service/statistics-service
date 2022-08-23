@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-// @Data
 @Table(name = "casoLV")
 public class CasoLV {
 
@@ -31,22 +30,17 @@ public class CasoLV {
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MunicipioCaso> pacientes = new ArrayList<MunicipioCaso>();
 
-    public Long getId() {
+    public Long retornarId() {
         return id;
     }
 
-    public Date getDataRegistro() {
+    public Date retornarDataRegistro() {
         return dataRegistro;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setDataRegistro(Date dataRegistro) {
+    public void definirDataRegistro(Date dataRegistro) {
         this.dataRegistro = dataRegistro;
     }
-
 
     public CasoLV(Long id, Date dataRegistro) {
         this.id = id;
